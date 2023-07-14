@@ -1,0 +1,21 @@
+
+
+.app__header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  // color: white;
+}
+
+.dark{
+  background-color: #333;
+  color: #fff;
+}
+.light{
+  background-color: #a7bdc8f1;
+  color: #333;
+}

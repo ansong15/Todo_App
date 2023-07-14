@@ -1,0 +1,18 @@
+$primary-color : #242526;
+$secondary-color : #fff;
+$sabodinate-color : #505466;
+$text-color: #555;
+$secodary-text-color: #cecece;
+.board{
+    position: absolute;
+        top: 10rem;
+        right: 13vw;
+        background-color: $secodary-text-color;
+        padding: 10px 20px;
+        width: 70vw;
+        border-radius: 1.3rem;
+        
+}
+.main{
+    margin: 1rem;
+}

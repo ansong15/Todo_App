@@ -1,0 +1,48 @@
+.splash{
+    &__main{
+        // height: 100vh;
+        // width: 100vw;
+        background: #fff;
+        color: #444;
+    }
+    &__imgView{
+       margin-top: 0;
+       padding: 0.4rem;
+
+       & > img{
+        height: 50vh;
+        width:100%;
+        object-fit: contain;
+       }
+    }
+    &__txtView{
+        margin: 0.6rem;
+        padding: 2rem;
+        & > h1{  
+            font-weight: 700;
+        }
+        & > span{
+            font-weight: 500; 
+            font-size:1rem;
+            // line-height: ceil($number: 23);     
+        }
+
+    }
+
+    &__clickTxt{
+        margin-top: 2rem;
+
+        & > span{
+            background-color: #d3eaf6f1;
+            padding: 1rem;
+            border-radius: 50%;
+        }
+    }
+
+}
+a{
+    color: #444;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.4rem;
+}

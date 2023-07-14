@@ -1,0 +1,91 @@
+$primary-color : #242526;
+$secondary-color : #fff;
+$sabodinate-color : #505466;
+$text-color: #555;
+$secodary-text-color: #cecece;
+$accent-color: #ff562f;
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+.dark{
+    background-color: #333;
+    color: #fff;
+  }
+  .light{ 
+    background-color: #c7d4daf1;
+    color: #333;
+  }
+
+.complete{
+    display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 3rem;
+        margin: 2rem;
+
+    &__card{
+        position: relative;
+        background: lighten($color: $primary-color, $amount: 80%);
+        // border-radius: .9rem;
+        padding: .5rem 1rem;
+        border-bottom: 5px solid $accent-color;
+        box-shadow: 2px 2px 2px $sabodinate-color;
+        margin-bottom: 1.5rem;
+        
+        
+        &::after{
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: $accent-color;
+            opacity: 0;
+            @include transition-ease;
+        }
+        &:hover{
+            &::after{
+                top: 0;
+                opacity: 0.9;
+            }
+            .complete__btn{
+                opacity: 1;
+            }
+            box-shadow: 1px 1px 1px $text-color;
+            @include transition-ease;
+        }
+
+    }
+
+    
+    &__icons{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 90%;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        text-align: center;
+        @include transition-ease;
+
+    }
+
+    &__btn{
+        opacity: 0;
+        border: none;
+        // color: $secondary-color;
+        color: #555;
+        cursor: pointer;
+
+        
+
+        &:hover{
+            color: $secodary-text-color;
+        }
+        
+    }
+}
