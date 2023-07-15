@@ -33,26 +33,27 @@ function addTask(e) {
      
     
     return (
-      
+      <div className='create__main'>
         <form >
             <div className='form'>
             <div className='form__text'>
                 <input type='text' name='item' value={inputs.event}
                  placeholder='Task' onChange={(e)=>setInputs({...inputs, event: e.target.value})}>
                     </input>  
-                    <textarea cols={3} type='text' name='item_desc' value={inputs.desc}
+                    <input className='txt_desc' type='text' name='item_desc' value={inputs.desc}
                     placeholder='You can add a little description' 
                     onChange={(e)=>setInputs({...inputs, desc: e.target.value})}
-                    ></textarea>              
+                    />              
             </div>
            
-           
+           <div className='form_btns'>
             <button className='form_btn' type ='submit' onClick={addTask}><Link to={'/tasks'}>Submit</Link></button>
                    
             <button className='form_btn' type='submit'><Link to={'/tasks'}>Cancel</Link></button>
-
+            </div>
             </div> 
         </form>
+        </div>
     
     );
   }

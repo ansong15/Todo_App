@@ -1,6 +1,4 @@
-
-import { FaEdit, FaRegGrinSquintTears } from "react-icons/fa";
-import { MdCheckBox, MdDelete, MdHomeFilled, MdHomeMax, MdHouseSiding, MdPanoramaFishEye } from "react-icons/md";
+import { MdCheckBox, MdDelete, MdHomeFilled} from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import '../../styles/task.scss'
@@ -17,8 +15,6 @@ const getLocalStorage = ()=>{
 function AllTasks() { 
   //STATE VARIABLES
     const [tasks, setTasks] = useState(getLocalStorage());
-    const [open, setOpen] = useState(false);
-    const [edit, setEdit] = useState();
     const [mode, setMode] = useState('');
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');

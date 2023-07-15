@@ -4,22 +4,28 @@ $sabodinate-color : #505466;
 $text-color: #555;
 $secodary-text-color: #cecece;
 
-
+.create__main{
+    background-color: #a7bdc8f1;
+    height: 100vh;
+}
 .form{
+    position: absolute;
+    top: 25%;
     width: 80%;
+    height: 50vh;
     margin: 2rem 0.7rem;
     padding: 1rem;
     box-sizing: border-box;
     border-radius: 1rem;
     border-right:   5px solid #d4e2e8;
-    // box-shadow:   10px 20px #aacddb;
-    // box-shadow:   10px 20px #72aecc;
     background: $secondary-color;
+    box-sizing: border-box;
 
     &__text > input{
         font-size: larger;
-        padding: 6px;
-        margin-bottom: 8px;
+        padding: 2rem;
+        margin:.6rem 2rem;
+        
     }
     &__text{
         display: flex;
@@ -41,6 +47,10 @@ $secodary-text-color: #cecece;
     margin:8px 20px;
     width: 60%;
 }
+.txt_desc
+{
+    height: 50%;
+}
 
 form{
     // background: rgb(115, 115, 153);
@@ -49,7 +59,52 @@ form{
 }
 .form_btn{
     margin: 15px 15px ;
-    padding: 5px;
-    font-weight: 700;
+    padding: .6rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #a7bdc8f1;
     cursor: pointer;
+    transition: all 500ms ease-in;
+& > a{
+    color: #fff;
+    font-weight: 400;
+    font-size: large;
+}
+    &:hover{
+        background: #444;
+    }
+}
+
+.form_btns{
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   margin-left: 1rem;
+}
+
+
+//FFOR SMALLER SCREENS
+@media screen and (max-width: 480px) {
+    .form{&__text > input{
+        font-size: small;
+        padding: .5rem;
+        margin:.6rem 2rem;
+        
+    }
+}
+
+.form_btn{
+    margin: 15px 15px ;
+    padding: .3rem;
+   
+& > a{
+    color: #fff;
+    font-weight: 400;
+    font-size: large;
+}
+    &:hover{
+        background: #444;
+    }
+}
 }

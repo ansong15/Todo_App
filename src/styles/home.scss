@@ -1,6 +1,6 @@
 .home{
     &__mainn{
-        // height: 100vh;
+        height: 100vh;
         width: 100%;
         background: #1e98daf4;
         margin: 0;
@@ -50,7 +50,7 @@
         font-weight: 700;
 
         & > p{
-            font-size: 2rem;
+            font-size: 1.7rem;
             margin-bottom: 0;
             color: #444;
         }
