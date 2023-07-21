@@ -9,7 +9,7 @@ import AllTasks from './components/pages/AllTasks';
 import Completed from './components/pages/Completed';
 import SplashScreen from './components/pages/SplahScreen';
 import HomePage from './components/pages/HomePage';
-import Header from './components/Header';
+import PageNotFound from './components/pages/PageNotFound';
 
 
 
@@ -41,6 +41,7 @@ const modeSetter=(mode)=>{
       <Route path='/tasks'  element={<AllTasks />} />
       <Route path={'/completed'} element={<Completed />}/>
       <Route path={'/header'} Header modeSetter={modeSetter} />
+      <Route path={'*'} element={<PageNotFound />}/>
     </Routes>
     
   );

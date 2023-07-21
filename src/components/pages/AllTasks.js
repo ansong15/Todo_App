@@ -45,6 +45,7 @@ function AllTasks() {
     }
   //CHECK COMPLETE
  const  handleCheck =(id)=>{
+  setCheck(!check)
   //FIND THE INDEX
   const taskIndex = tasks.findIndex(item => item.id === id);
   let updatableTask = [...tasks];
@@ -113,9 +114,11 @@ const getModeInputs = (mode)=>{
         </div>
 
         <div className="icons">
-            <button className={`${check ? 'checked' : ''} icon icon__completen`}  
-            onClick={()=>{handleCheck(item.id)}}>< MdCheckBox/></button>
-            <button className='icon icon__delete'  onClick={()=>{ deleteTask(item.id)}}>< MdDelete/></button>
+            <button className={`${check ? 'check' : ''} icon icon__complete`}  
+            onClick={()=>{handleCheck(item.id)}}>
+              <MdCheckBox className={`${item.isComplete ? 'check' : ''} icon__complete`} ></MdCheckBox>
+              </button>
+            <button className='icon icon__delete'  onClick={()=>{ deleteTask(item.id)}}>< MdDelete className="btn_del"/></button>
         </div>
         
     </div>
@@ -129,7 +132,8 @@ const getModeInputs = (mode)=>{
       <div className="buttonNavigation"> 
     <button className="btn_clearAll" onClick={clearAllTodo}>Clear All</button>
     <div>
-    <Link to={'/home'}><MdHomeFilled/></Link>
+    <Link to={'/home'}><MdHomeFilled className="btn_h"></MdHomeFilled></Link>
+    <small>home</small>
     </div>
     
     </div> 

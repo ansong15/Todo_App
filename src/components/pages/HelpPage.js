@@ -5,7 +5,7 @@ import '../../styles/helpPage.scss'
 function HelpPage() {
     return ( 
     <div className="main">
-<div className="home_btn"><Link to={'/current'}><MdArrowBackIos/></Link></div>
+<div className="home_btn"><Link to={'/tasks'}><MdArrowBackIos/></Link></div>
 <h1>How may we help you</h1>
      <div className="board">
      <h1>the help page</h1>

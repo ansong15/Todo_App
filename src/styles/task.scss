@@ -42,7 +42,7 @@ $secodary-text-color:  #a7bdc8f1;
 .task__event{
     // background: yellow;
     padding: 5px 10px;
-    color: $text-color;
+    color: $primary-color;
 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -51,7 +51,7 @@ $secodary-text-color:  #a7bdc8f1;
     & > p{
         margin-bottom: 0;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1.7rem;
     }
 
     & > a{
@@ -74,27 +74,60 @@ $secodary-text-color:  #a7bdc8f1;
 .icon{
     font-size: 25px;
     cursor: pointer;
-    color: $sabodinate-color;
     padding: 0;
     border: none;
 
-    &__edit > a{
-        background: none;
-        color: inherit;
+    &__complete{
+        padding: 1rem;
+
+        &:hover{
+            color: #0f71a6a4;
+        }
     }
     
 }
 
 .checked{
-    color: $primary-color;
+    color: $text-color;
     text-decoration: line-through;
     transition: all .2s ease-in-out;
 }
 
+.check{
+  color: #dd5f43e3;
+}
 
+.btn_del{
+    &:hover{
+        color: #dd5f43e3;
+    }
+}
 
+.buttonNavigation{
+    display: flex;
+    justify-content: space-between;
+   align-items: center;
+    width: 87%;
+    margin: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid #000;
+    
 
+    & > div{
+        box-sizing: border-box;
+        // font-size: x-large;
+        display: block;
+        color: $primary-color;
+        border-radius: 2px;
+        padding: .1rem;
+        cursor: pointer;
 
+        &:hover{
+           background: #7170704c ;
+         color:#1e98daa4;
+        }
+    }
+}
 
 .btn_clearAll{
     width: 20vw;
@@ -116,27 +149,11 @@ $secodary-text-color:  #a7bdc8f1;
     }
 }
 
-.buttonNavigation{
-    display: flex;
-    justify-content: space-between;
-   align-items: baseline;
-    width: 87%;
-    margin: 1rem;
-    padding: 1rem 0;
-
-    & > div{
-        box-sizing: border-box;
-        font-size: x-large;
-        background:#1e98daa4 ;
-        color: #333;
-        border-radius: 2px;
-        padding: .1rem;
-        cursor: pointer;
-
-        &:hover{
-           color: #dd5f43e3;
-           background:#0f71a6a4 ;
-        }
+.btn_h{
+    font-size: xx-large;
+    color: $primary-color;
+    &:hover{
+        color:#1e98daa4;
     }
 }
 
@@ -162,5 +179,11 @@ $secodary-text-color:  #a7bdc8f1;
 
         .btn_clearAll{
             width: 30vw;
+        }
+
+        .task__event{
+            & > p {
+                font-size: 1.1rem;
+            }
         }
 }
