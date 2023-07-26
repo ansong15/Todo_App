@@ -1,8 +1,9 @@
-import { MdCheckBox, MdDelete, MdHomeFilled} from "react-icons/md";
+import { MdCheckBox, MdDelete, MdDescription, MdHomeFilled, MdReadMore} from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import '../../styles/task.scss'
 import Header from "../Header";
+
 
 const getLocalStorage = ()=>{
     let list = localStorage.getItem("events")
@@ -18,6 +19,9 @@ function AllTasks() {
     const [mode, setMode] = useState('');
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
+    const [readOpen, setReadOpen] = useState(false);
+    const [editableTask, setEditableTask] = useState({})
+    // const readRef = useRef();
 
     
     useEffect(()=>{
@@ -33,7 +37,21 @@ function AllTasks() {
   }, [tasks])
     // const list = Object.values(tasks)
     // console.log(list);
-    
+
+    //READING AND EDITTING TASKS
+  function readHandler(id){
+  //find the Id of the editable task
+  const taskIndex = tasks.findIndex(item => item.id === id);
+  let updatableTask = [...tasks];
+  let taskevent = updatableTask[taskIndex];
+
+  let editEvent = taskevent.event
+  let editDesc = taskevent.desc
+
+  setEditableTask({event: editEvent, desc: editDesc})
+  }
+  //-------------------create a new task as the edited task------------------
+      
     //DELETE TASK
     const deleteTask = (id)=> {
         const newTasks = tasks.filter(item=> item.id !== id)       
@@ -43,7 +61,7 @@ function AllTasks() {
     const clearAllTodo =()=>{
       setTasks([])
     }
-  //CHECK COMPLETE
+  //SETTING CHECK COMPLETE
  const  handleCheck =(id)=>{
   setCheck(!check)
   //FIND THE INDEX
@@ -59,6 +77,7 @@ function AllTasks() {
   setTasks(updatableTask)
  
  }
+
 //GET THE SEARCH VALUE
 const getSearchInputs = (val) =>{
     setSearch(val)
@@ -113,6 +132,7 @@ const getModeInputs = (mode)=>{
             <small>{item.createdAt}</small>
         </div>
 
+       <div className="icons_wrapper">
         <div className="icons">
             <button className={`${check ? 'check' : ''} icon icon__complete`}  
             onClick={()=>{handleCheck(item.id)}}>
@@ -120,6 +140,33 @@ const getModeInputs = (mode)=>{
               </button>
             <button className='icon icon__delete'  onClick={()=>{ deleteTask(item.id)}}>< MdDelete className="btn_del"/></button>
         </div>
+      
+        {/* DISPLAY READ PANNEL */}
+        <div>
+        <button className="icon__readTask" onClick={()=>{setReadOpen(!readOpen); readHandler(item.id)}}> <MdDescription className="btn_del"/>Read </button>
+        </div>
+          <div  className={`readPannel ${readOpen ? 'active' : 'inactive'}`}>
+          <div className='form'>
+            <div className='form__text'>
+                <input type='text' name='item' value={editableTask.event}
+                 placeholder='Task' onChange={(e)=>setEditableTask({editEvent: e.target.vaue})}>
+                    </input>  
+                    <input className='txt_desc' type='text' name='item_desc' value={editableTask.desc}
+                    placeholder='You can add a little description' 
+                    onChange={(e)=>setEditableTask({editDesc: e.target.value})}
+                    />              
+            </div>
+           
+           <div className='form_btns'>
+            <button className='form_btn' type ='submit' onClick={()=>{setReadOpen(false); }}><Link to={'/tasks'}>Save Changes</Link></button>
+                   
+            <button className='form_btn' type='submit'onClick={()=>{setReadOpen(false)}}><Link to={'/tasks'}>OK</Link></button>
+            </div>
+            </div> 
+          </div>
+        
+        </div>
+   
         
     </div>
 

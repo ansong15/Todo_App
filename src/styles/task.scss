@@ -61,10 +61,19 @@ $secodary-text-color:  #a7bdc8f1;
         color: inherit;
     }
 }
+.icons_wrapper{
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: blue;
+    box-sizing: border-box;
+}
 .icons{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: red;
 
     &>button{
         background: none;
@@ -78,7 +87,7 @@ $secodary-text-color:  #a7bdc8f1;
     border: none;
 
     &__complete{
-        padding: 1rem;
+        // padding: 1rem;
 
         &:hover{
             color: #0f71a6a4;
@@ -157,7 +166,7 @@ $secodary-text-color:  #a7bdc8f1;
     }
 }
 
-//FFOR SMALLER SCREENS
+//FOR SMALLER SCREENS
 @media screen and (max-width: 480px) {
     .buttonNavigation{
           
@@ -186,4 +195,25 @@ $secodary-text-color:  #a7bdc8f1;
                 font-size: 1.1rem;
             }
         }
+}
+
+     // READ PANNEL
+.readPannel{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 70%;
+}
+
+.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 500ms ease;
+}
+.inactive{
+    opacity: 1;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 500ms ease-in;
 }

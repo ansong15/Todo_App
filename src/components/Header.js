@@ -52,7 +52,7 @@ function Header({  getModeInputs, getSearchInputs}) {
             <h1>TASKS</h1></div>
         
         <div ref={menuRef} className="menu" >
-            <div className="menu__trigger" >
+            <div className="menu__trigger">
             <MdAddBox />
             </div>
 

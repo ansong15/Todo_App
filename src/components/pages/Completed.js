@@ -44,8 +44,9 @@ function Completed() {
        <div key={item.id} className='complete__card'>
         <div>
             {/* {setCounter(pre=> pre + index)} */}
-            <h3>{item.event}</h3>
-            <small>{item.desc}</small>
+            <h3>Task: {item.event}</h3>
+            <p>Description: {item.desc}</p>
+            <small>{item.createdAt}</small>
         </div>
         <div className='complete__icons'>
             <div className='complete__btn' onClick={()=>{}}><MdOutlineNotificationImportant/><span>Rate</span></div>
